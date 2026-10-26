@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>درسینو | برنامه‌ریزی هوشمند درسی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#758198;--line:#e7ecf3;--blue:#4361ee;--blue2:#6b7cff;--mint:#20b894;--orange:#f59e0b;--purple:#8b5cf6;--shadow:0 12px 34px rgba(25,42,80,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Vazirmatn',Tahoma,sans-serif;font-size:14px;line-height:1.7}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{max-width:1240px;margin:auto;padding:24px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,#4965f5,#7d8bff);display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px #4965f540}.logo svg{width:25px}.brand-name{font-size:22px;font-weight:900;letter-spacing:-.5px}.brand-sub{font-size:11px;color:var(--muted);margin-top:-5px}.top-actions{display:flex;gap:8px}.btn{border-radius:12px;padding:10px 15px;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 7px 16px #4361ee30}.btn-primary:hover{background:#344fe0;transform:translateY(-1px)}.btn-light{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn-light:hover{border-color:#c4ceff;background:#f9faff}.hero{border-radius:26px;padding:30px;color:#fff;background:radial-gradient(circle at 8% 10%,#7184ff 0,transparent 34%),linear-gradient(115deg,#172554,#273d92 62%,#4263e8);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:22px;min-height:210px}.hero:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #ffffff18;border-radius:50%;left:8%;top:-95px;box-shadow:0 0 0 30px #ffffff09,0 0 0 65px #ffffff06}.hero-content{position:relative;z-index:1;max-width:650px}.eyebrow{font-size:12px;color:#dbe4ff;display:flex;align-items:center;gap:8px;margin-bottom:8px}.dot{width:7px;height:7px;background:#6ee7c0;border-radius:50%;box-shadow:0 0 0 5px #6ee7c01c}.hero h1{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:0 0 10px;font-weight:900}.hero p{margin:0;color:#dce5ff;max-width:540px}.hero-art{position:relative;z-index:1;min-width:155px;width:180px;height:150px;display:grid;place-items:center}.orb{width:122px;height:122px;border-radius:34px;transform:rotate(-8deg);background:linear-gradient(145deg,#ffffff2e,#ffffff08);border:1px solid #ffffff42;display:grid;place-items:center;box-shadow:0 20px 45px #101c5260}.orb svg{width:74px;height:74px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.8fr);gap:22px;align-items:start}.maincol,.sidecol{display:grid;gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.section-title{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px}.section-icon{width:35px;height:35px;border-radius:11px;background:#edf0ff;color:var(--blue);display:grid;place-items:center}.section-icon svg{width:19px;height:19px}.small-muted{font-size:12px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:30px;height:30px;border-radius:10px;display:grid;place-items:center}.stat-icon svg{width:16px}.stat-value{font-size:25px;font-weight:900;margin-top:6px;letter-spacing:-.5px}.stat-note{font-size:11px;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;font-weight:700;color:#47536a}.field input,.field select{width:100%;background:#fbfcff;border:1px solid #dfe5ef;border-radius:11px;padding:11px 12px;outline:none;color:var(--ink);min-height:44px}.field input:focus,.field select:focus{border-color:#8190ff;box-shadow:0 0 0 3px #536dff17}.full{grid-column:1/-1}.subjects{display:grid;gap:10px}.subject-row{display:grid;grid-template-columns:minmax(105px,1.3fr) 1fr 1fr 38px;gap:9px;align-items:center;background:#fbfcff;border:1px solid var(--line);border-radius:13px;padding:10px}.subject-row input,.subject-row select{width:100%;min-width:0;border:1px solid #e0e6ef;background:#fff;border-radius:9px;padding:9px 8px;color:var(--ink);outline:none}.subject-row .remove{background:#fff0f0;color:#d34f5a;border-radius:9px;height:38px;font-size:19px}.subject-labels{display:grid;grid-template-columns:minmax(105px,1.3fr) 1fr 1fr 38px;gap:9px;padding:0 10px;color:var(--muted);font-size:11px}.hint{font-size:11px;color:var(--muted);margin-top:8px}.form-footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.daychips{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;color:#647087;border-radius:10px;padding:7px 10px;font-size:12px;font-weight:700}.chip.active{background:#eef1ff;border-color:#c8d0ff;color:#394fd4}.schedule-list{display:grid;gap:11px}.day-card{border:1px solid var(--line);border-radius:15px;overflow:hidden}.day-head{padding:12px 15px;background:#fafbff;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}.day-name{font-weight:900}.day-total{font-size:11px;color:var(--muted)}.session{display:flex;gap:12px;align-items:center;padding:13px 15px;border-bottom:1px solid #f0f2f7}.session:last-child{border-bottom:0}.session-check{width:21px;height:21px;accent-color:var(--blue);flex-shrink:0;cursor:pointer}.session-info{flex:1;min-width:0}.session-title{font-weight:800}.session-meta{font-size:11px;color:var(--muted);display:flex;gap:9px;flex-wrap:wrap}.session-time{font-size:12px;font-weight:800;white-space:nowrap;background:#f0f3ff;color:#4358d8;border-radius:9px;padding:6px 8px}.session.done .session-title{text-decoration:line-through;color:#98a2b3}.session.done{background:#fbfdfc}.tag{font-size:10px;font-weight:800;border-radius:7px;padding:3px 7px;background:#eafaf4;color:#15956f}.progress-wrap{background:#edf0f5;height:8px;border-radius:99px;overflow:hidden;margin:10px 0 5px}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#4263eb,#24c39a);border-radius:99px;transition:width .3s}.empty{padding:26px 15px;text-align:center;color:var(--muted)}.empty svg{width:40px;height:40px;color:#9aa7c1;margin-bottom:8px}.tip{background:linear-gradient(135deg,#f0f5ff,#f7f3ff);border:1px solid #e0e7ff;border-radius:16px;padding:17px;display:flex;gap:12px}.tip-icon{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--purple);display:grid;place-items:center;flex-shrink:0}.tip p{margin:4px 0 0;color:#66718a;font-size:12px}.mini-list{display:grid;gap:13px}.mini-item{display:flex;align-items:center;gap:10px}.mini-dot{width:10px;height:10px;border-radius:4px;flex-shrink:0}.mini-text{flex:1;font-size:12px;font-weight:700}.mini-val{font-size:12px;font-weight:900}.divider{height:1px;background:var(--line);margin:16px 0}.notice{border-radius:12px;background:#fff8e8;color:#95600b;border:1px solid #fce6b1;padding:12px;font-size:12px}.footer{text-align:center;color:#9aa3b3;font-size:11px;padding:24px 0 8px}.hidden{display:none!important}.toast{position:fixed;bottom:22px;left:22px;z-index:9;background:#172033;color:#fff;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidecol{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{min-width:120px;width:140px}.hero{padding:24px}.app{padding:16px}}
+@media(max-width:580px){.app{padding:12px}.topbar{align-items:flex-start}.brand-name{font-size:19px}.top-actions .btn span{display:none}.top-actions .btn{padding:10px}.hero{padding:22px;min-height:0}.hero-art{display:none}.hero h1{font-size:25px}.stats{gap:7px}.stat{padding:11px}.stat-value{font-size:21px}.stat-top{font-size:10px}.card{padding:16px}.sidecol{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.subject-labels{display:none}.subject-row{grid-template-columns:1fr 1fr;gap:8px}.subject-row .subject-name{grid-column:1/-1}.subject-row .remove{grid-column:2;grid-row:2}.session{padding:12px 10px;gap:8px}.session-time{font-size:10px;padding:5px}.section-title{font-size:15px}}
+@media print{body{background:#fff}.topbar,.hero,.form-card,.sidecol,.top-actions,.form-footer,.footer,.section-head .btn{display:none!important}.app{max-width:none;padding:0}.layout{display:block}.card{box-shadow:none;border:0;padding:0}.stats{margin:10px 0}.day-card{break-inside:avoid}.schedule-list{gap:8px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5C6.5 4 9.5 4.5 12 6v14c-2.5-1.5-5.5-2-9-0.5z"/><path d="M21 5.5C17.5 4 14.5 4.5 12 6v14c2.5-1.5 5.5-2 9-0.5z"/><path d="m8 10 2 2 4-4"/></svg></div>
+      <div><div class="brand-name">درسینو <span style="color:#4361ee">.</span></div><div class="brand-sub">DARSINO · برنامه‌ریزی با فکر</div></div>
+    </div>
+    <div class="top-actions">
+      <button class="btn btn-light" id="exportBtn" title="دریافت نسخه پشتیبان">⇩ <span>خروجی برنامه</span></button>
+      <button class="btn btn-light" id="printBtn" title="چاپ برنامه">▤ <span>چاپ</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow"><span class="dot"></span> برنامه‌ریز شخصی مطالعه</div>
+      <h1>درس خوندن، با برنامه‌ای که<br>برای <span style="color:#a9f3df">تو</span> ساخته شده.</h1>
+      <p>چند سؤال کوتاه جواب بده؛ درسینو با توجه به درس‌ها، میزان تسلط، امتحان‌ها و زمان آزادت، یک برنامهٔ هفتگی واقع‌بینانه می‌سازد.</p>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:19px"><button class="btn" style="background:#fff;color:#253c9a" onclick="document.getElementById('questionnaire').scrollIntoView({behavior:'smooth'})">ساخت برنامهٔ من <span>←</span></button><span style="font-size:11px;color:#dbe5ff;align-self:center">رایگان · بدون ثبت‌نام</span></div>
+    </div>
+    <div class="hero-art"><div class="orb"><svg viewBox="0 0 100 100" fill="none"><path d="M17 27c13-5 25-2 33 5v47c-8-7-20-10-33-5V27Z" fill="#fff" fill-opacity=".95"/><path d="M83 27c-13-5-25-2-33 5v47c8-7 20-10 33-5V27Z" fill="#c8f7ed"/><path d="M29 39h11M29 47h11M61 39h11M61 47h11" stroke="#4962dc" stroke-width="3" stroke-linecap="round"/><path d="m42 18 7 7 13-14" stroke="#78f0ce" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-top"><span>جلسه‌های برنامه‌ریزی‌شده</span><span class="stat-icon" style="background:#edf0ff;color:#5265e8">▦</span></div><div class="stat-value" id="statSessions">۰</div><div class="stat-note">برای ۷ روز آینده</div></div>
+    <div class="stat"><div class="stat-top"><span>زمان مطالعه</span><span class="stat-icon" style="background:#e7faf3;color:#17a77e">◷</span></div><div class="stat-value" id="statHours">۰ <small style="font-size:13px">ساعت</small></div><div class="stat-note">بر اساس برنامهٔ فعلی</div></div>
+    <div class="stat"><div class="stat-top"><span>پیشرفت انجام کارها</span><span class="stat-icon" style="background:#fff4e5;color:#e49a1b">✓</span></div><div class="stat-value" id="statProgress">۰٪</div><div class="progress-wrap"><div class="progress-bar" id="overallProgress"></div></div><div class="stat-note">قدم‌به‌قدم جلو برو</div></div>
+  </div>
+
+  <div class="layout">
+    <main class="maincol">
+      <section class="card form-card" id="questionnaire">
+        <div class="section-head">
+          <div class="section-title"><span class="section-icon">☷</span> بیا برنامه‌ات رو تنظیم کنیم</div>
+          <span class="small-muted">حدود ۲ دقیقه</span>
+        </div>
+        <form id="plannerForm">
+          <div class="form-grid">
+            <div class="field"><label for="studentName">اسم کوچیکت (اختیاری)</label><input id="studentName" placeholder="مثلاً آرتین"></div>
+            <div class="field"><label for="grade">پایهٔ تحصیلی</label><select id="grade"><option>هفتم</option><option>هشتم</option><option>نهم</option><option>دهم</option><option>یازدهم</option><option>دوازدهم</option><option>دانشگاه</option><option>متفرقه</option></select></div>
+            <div class="field"><label for="hours">روزانه چند ساعت برای مطالعه وقت داری؟</label><select id="hours"><option value="1">۱ ساعت</option><option value="1.5">۱٫۵ ساعت</option><option value="2" selected>۲ ساعت</option><option value="2.5">۲٫۵ ساعت</option><option value="3">۳ ساعت</option><option value="4">۴ ساعت</option><option value="5">۵ ساعت</option></select></div>
+            <div class="field"><label for="startTime">معمولاً از چه ساعتی شروع می‌کنی؟</label><select id="startTime"><option value="14">۱۴:۰۰</option><option value="15">۱۵:۰۰</option><option value="16" selected>۱۶:۰۰</option><option value="17">۱۷:۰۰</option><option value="18">۱۸:۰۰</option><option value="19">۱۹:۰۰</option><option value="20">۲۰:۰۰</option></select></div>
+            <div class="field"><label for="examDate">نزدیک‌ترین امتحان (اختیاری)</label><input id="examDate" type="date"></div>
+            <div class="field"><label for="breakLength">استراحت بین جلسه‌ها</label><select id="breakLength"><option value="5">۵ دقیقه</option><option value="10" selected>۱۰ دقیقه</option><option value="15">۱۵ دقیقه</option></select></div>
+            <div class="field full">
+              <label>درس‌ها، میزان تسلط و سختی هر درس</label>
+              <div class="subject-labels"><span>نام درس</span><span>تسلط من</span><span>سختی درس</span><span></span></div>
+              <div class="subjects" id="subjects">
+                <div class="subject-row">
+                  <input class="subject-name" aria-label="نام درس" placeholder="مثلاً ریاضی" value="ریاضی">
+                  <select class="mastery" aria-label="میزان تسلط"><option value="1">کم</option><option value="2" selected>متوسط</option><option value="3">خوب</option></select>
+                  <select class="difficulty" aria-label="سختی درس"><option value="1">آسان</option><option value="2" selected>متوسط</option><option value="3">سخت</option></select>
+                  <button type="button" class="remove" aria-label="حذف درس" title="حذف درس" onclick="removeSubject(this)">×</button>
+                </div>
+                <div class="subject-row">
+                  <input class="subject-name" aria-label="نام درس" placeholder="مثلاً علوم" value="علوم">
+                  <select class="mastery" aria-label="میزان تسلط"><option value="1">کم</option><option value="2" selected>متوسط</option><option value="3">خوب</option></select>
+                  <select class="difficulty" aria-label="سختی درس"><option value="1">آسان</option><option value="2" selected>متوسط</option><option value="3">سخت</option></select>
+                  <button type="button" class="remove" aria-label="حذف درس" title="حذف درس" onclick="removeSubject(this)">×</button>
+                </div>
+                <div class="subject-row">
+                  <input class="subject-name" aria-label="نام درس" placeholder="مثلاً فارسی" value="فارسی">
+                  <select class="mastery" aria-label="میزان تسلط"><option value="1" selected>کم</option><option value="2">متوسط</option><option value="3">خوب</option></select>
+                  <select class="difficulty" aria-label="سختی درس"><option value="1" selected>آسان</option><option value="2">متوسط</option><option value="3">سخت</option></select>
+                  <button type="button" class="remove" aria-label="حذف درس" title="حذف درس" onclick="removeSubject(this)">×</button>
+                </div>
+              </div>
+              <div style="margin-top:10px"><button class="btn btn-light" type="button" id="addSubject">＋ افزودن درس</button></div>
+              <div class="hint">درس‌هایی که تسلطت به آن‌ها کمتر است یا سخت‌ترند، معمولاً سهم بیشتری از برنامه می‌گیرند.</div>
+            </div>
+          </div>
+          <div class="form-footer"><button type="submit" class="btn btn-primary">ساخت برنامهٔ هفتگی <span>✦</span></button><button type="button" class="btn btn-light" id="resetBtn">پاک‌کردن فرم</button></div>
+        </form>
+      </section>
+
+      <section class="card" id="scheduleCard">
+        <div class="section-head">
+          <div><div class="section-title"><span class="section-icon">▦</span> برنامهٔ هفتگی تو</div><div class="small-muted" id="scheduleSubtitle" style="margin-top:4px">بعد از پاسخ‌دادن به سؤال‌ها، برنامه اینجا نمایش داده می‌شود.</div></div>
+          <button class="btn btn-light" id="regenBtn" title="ساخت دوباره برنامه">↻ بازسازی</button>
+        </div>
+        <div id="scheduleList" class="schedule-list">
+          <div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 18h7"/></svg><div style="font-weight:800;color:#5d6b83">هنوز برنامه‌ای نساختی</div><div class="small-muted">درس‌ها و زمان آزادت رو بالا وارد کن و دکمهٔ ساخت برنامه رو بزن.</div></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidecol">
+      <section class="card">
+        <div class="section-head"><div class="section-title"><span class="section-icon" style="background:#e8fbf5;color:#13a47c">◈</span> خلاصهٔ برنامه</div></div>
+        <div id="summaryEmpty" class="small-muted">وقتی برنامه‌ات ساخته شود، خلاصهٔ آن را اینجا می‌بینی.</div>
+        <div id="summaryContent" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="small-muted">تکمیل برنامه</span><strong id="summaryDone">۰ از ۰</strong></div>
+          <div class="progress-wrap"><div class="progress-bar" id="summaryBar"></div></div>
+          <div class="divider"></div>
+          <div class="mini-list" id="subjectSummary"></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="section-head"><div class="section-title"><span class="section-icon" style="background:#fff3e3;color:#e49a1b">✦</span> نکتهٔ درسینو</div></div>
+        <div class="tip"><div class="tip-icon">☀</div><div><strong id="tipTitle">کم شروع کن، پیوسته ادامه بده</strong><p id="tipText">جلسه‌های کوتاه و منظم معمولاً از یک برنامهٔ سنگین و خسته‌کننده قابل‌اجراترند. بین درس‌ها کمی استراحت کن.</p></div></div>
+      </section>
+      <section class="card">
+        <div class="section-head"><div class="section-title"><span class="section-icon" style="background:#f0eaff;color:#8b5cf6">⌁</span> روش برنامه‌ریزی</div></div>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot" style="background:#4361ee"></span><span class="mini-text">اولویت با درس‌های سخت‌تر</span></div>
+          <div class="mini-item"><span class="mini-dot" style="background:#20b894"></span><span class="mini-text">توجه به میزان تسلط</span></div>
+          <div class="mini-item"><span class="mini-dot" style="background:#f59e0b"></span><span class="mini-text">جلسه‌های کوتاه و استراحت</span></div>
+          <div class="mini-item"><span class="mini-dot" style="background:#8b5cf6"></span><span class="mini-text">مرور دوباره در طول هفته</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="notice">این برنامه یک پیشنهاد قابل‌تغییر است؛ با توجه به تکالیف مدرسه، خستگی و شرایط واقعی روزت تنظیمش کن.</div>
+      </section>
+    </aside>
+  </div>
+  <footer class="footer">درسینو · برنامه‌ریزی درسی ساده‌تر، یک قدم در هر روز<br>اطلاعات این نسخه فقط در همین مرورگر ذخیره می‌شود.</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fa=n=>Number(n).toLocaleString('fa-IR');
+let plan=[], settings=null;
+const colors=['#4361ee','#20b894','#f59e0b','#8b5cf6','#e16b8c','#0ea5e9','#64748b'];
+function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500)}
+function removeSubject(btn){if($$('.subject-row').length<=1){toast('حداقل یک درس باید داشته باشی.');return}btn.closest('.subject-row').remove()}
+function addSubjectRow(name=''){const row=document.createElement('div');row.className='subject-row';row.innerHTML=`<input class="subject-name" aria-label="نام درس" placeholder="مثلاً زبان انگلیسی" value="${escapeHtml(name)}"><select class="mastery" aria-label="میزان تسلط"><option value="1">کم</option><option value="2" selected>متوسط</option><option value="3">خوب</option></select><select class="difficulty" aria-label="سختی درس"><option value="1">آسان</option><option value="2" selected>متوسط</option><option value="3">سخت</option></select><button type="button" class="remove" aria-label="حذف درس" title="حذف درس" onclick="removeSubject(this)">×</button>`;$('#subjects').appendChild(row)}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('#addSubject').addEventListener('click',()=>{addSubjectRow();$('#subjects .subject-row:last-child .subject-name').focus()});
+function readForm(){const subjects=$$('.subject-row').map(r=>({name:r.querySelector('.subject-name').value.trim(),mastery:+r.querySelector('.mastery').value,difficulty:+r.querySelector('.difficulty').value})).filter(s=>s.name);return {name:$('#studentName').value.trim(),grade:$('#grade').value,hours:+$('#hours').value,start:+$('#startTime').value,exam:$('#examDate').value,breakMin:+$('#breakLength').value,subjects}}
+function dateKey(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function dayLabel(d){return ['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'][d.getDay()]}
+function shortDate(d){return fa(d.getMonth()+1)+'/'+fa(d.getDate())}
+function timeLabel(h,m=0){return fa(h).padStart(2,'۰')+':'+fa(m).padStart(2,'۰')}
+function generatePlan(s){
+ let subs=s.subjects.map((x,i)=>({...x,id:i,weight:(4-x.mastery)*1.35+x.difficulty*.8+1,minutes:Math.round(25+((4-x.mastery)*10)+(x.difficulty-1)*5)}));
+ if(!subs.length) return [];
+ let days=[];const today=new Date();today.setHours(0,0,0,0);
+ for(let d=0;d<7;d++){let date=new Date(today);date.setDate(today.getDate()+d);days.push({date,sessions:[]})}
+ const exam=s.exam?new Date(s.exam+'T12:00:00'):null;
+ // Spread weighted subjects across seven days; slightly favor weaker/harder subjects and exam proximity.
+ const pool=[];
+ days.forEach((day,di)=>{
+   let available=Math.max(1,Math.floor(s.hours*60/40));
+   for(let j=0;j<available;j++){
+     let scored=subs.map(sub=>{
+       const recent=pool.filter(p=>p.subjectId===sub.id&&p.dayIndex>=di-1&&p.dayIndex<=di).length;
+       const alreadyToday=day.sessions.filter(p=>p.subjectId===sub.id).length;
+       let urgency=0;
+       if(exam){const diff=Math.ceil((exam-day.date)/(86400000));if(diff>=0&&diff<=7)urgency= Math.max(0,7-diff)*.16}
+       return {sub,score:sub.weight+urgency-recent*1.25-alreadyToday*1.5+Math.random()*.18}
+     }).sort((a,b)=>b.score-a.score)[0].sub;
+     const minutes=Math.min(50,Math.max(25,scored.minutes));
+     const slot={id:`${dateKey(day.date)}-${j}-${scored.id}`,subjectId:scored.id,subject:scored.name,minutes,done:false,kind:(j===available-1&&di%2===1)?'مرور و تمرین':'مطالعه'};
+     day.sessions.push(slot);pool.push({...slot,dayIndex:di});
+   }
+   // Keep workload sensible, with a small review session every few days when possible.
+ });
+ // If a near exam date exists, label sessions for that subject generically; no assumption about which exam subject.
+ if(exam){const diff=Math.ceil((exam-today)/86400000);if(diff>=0&&diff<=7){days.forEach((d,i)=>{if(i>=Math.max(0,diff-2)&&d.sessions.length)d.sessions[d.sessions.length-1].kind='مرور پیش از امتحان'})}}
+ let serial=0;
+ days.forEach(day=>{let h=s.start,m=0;day.sessions.forEach((ses,i)=>{ses.startMinutes=h*60+m;ses.endMinutes=ses.startMinutes+ses.minutes;let end=ses.endMinutes;ses.startText=timeLabel(Math.floor(ses.startMinutes/60),ses.startMinutes%60);ses.endText=timeLabel(Math.floor(end/60),end%60);let next=end+s.breakMin;h=Math.floor(next/60);m=next%60;serial++})});
+ return days;
+}
+function renderPlan(){
+ const list=$('#scheduleList');
+ if(!plan.length){list.innerHTML='<div class="empty">هنوز برنامه‌ای نساختی.</div>';return}
+ const total=plan.reduce((a,d)=>a+d.sessions.length,0),mins=plan.reduce((a,d)=>a+d.sessions.reduce((x,s)=>x+s.minutes,0),0),done=plan.reduce((a,d)=>a+d.sessions.filter(s=>s.done).length,0);
+ $('#scheduleSubtitle').textContent=`${fa(plan.length)} روز برنامه · ${fa(total)} جلسه · هر تغییری را می‌توانی دوباره تنظیم کنی`;
+ list.innerHTML=plan.map((day,di)=>`<div class="day-card"><div class="day-head"><div><div class="day-name">${dayLabel(day.date)} <span style="font-size:11px;color:#8490a5;font-weight:500">${shortDate(day.date)}</span></div><div class="day-total">${fa(day.sessions.reduce((a,s)=>a+s.minutes,0))} دقیقه مطالعه</div></div><span class="tag">${day.sessions.every(s=>s.done)?'تکمیل شد':`${fa(day.sessions.filter(s=>s.done).length)} از ${fa(day.sessions.length)} انجام‌شده`}</span></div>${day.sessions.map((s,si)=>`<div class="session ${s.done?'done':''}"><input class="session-check" type="checkbox" ${s.done?'checked':''} aria-label="علامت انجام جلسه" data-day="${di}" data-session="${si}"><div class="session-info"><div class="session-title">${escapeHtml(s.subject)}</div><div class="session-meta"><span>${s.kind}</span><span>${fa(s.minutes)} دقیقه</span></div></div><div class="session-time">${s.startText}–${s.endText}</div></div>`).join('')}</div>`).join('');
+ $$('.session-check').forEach(c=>c.addEventListener('change',e=>{const d=+e.target.dataset.day,i=+e.target.dataset.session;plan[d].sessions[i].done=e.target.checked;savePlan();renderPlan();updateStats()}));
+ updateStats();
+}
+function updateStats(){
+ const sessions=plan.flatMap(d=>d.sessions),done=sessions.filter(s=>s.done).length,mins=sessions.reduce((a,s)=>a+s.minutes,0),pct=sessions.length?Math.round(done/sessions.length*100):0;
+ $('#statSessions').textContent=fa(sessions.length);$('#statHours').innerHTML=fa(Math.round(mins/6)/10)+' <small style="font-size:13px">ساعت</small>';$('#statProgress').textContent=fa(pct)+'٪';$('#overallProgress').style.width=pct+'%';
+ if(sessions.length){$('#summaryEmpty').classList.add('hidden');$('#summaryContent').classList.remove('hidden');$('#summaryDone').textContent=`${fa(done)} از ${fa(sessions.length)}`;$('#summaryBar').style.width=pct+'%';
+ const counts={};sessions.forEach(s=>{counts[s.subject]=(counts[s.subject]||{all:0,done:0,mins:0});counts[s.subject].all++;counts[s.subject].mins+=s.minutes;if(s.done)counts[s.subject].done++});
+ $('#subjectSummary').innerHTML=Object.entries(counts).map(([name,x],i)=>`<div class="mini-item"><span class="mini-dot" style="background:${colors[i%colors.length]}"></span><span class="mini-text">${escapeHtml(name)}</span><span class="mini-val">${fa(x.all)} جلسه</span></div>`).join('');
+ }else{$('#summaryEmpty').classList.remove('hidden');$('#summaryContent').classList.add('hidden')}
+}
+function savePlan(){try{localStorage.setItem('darsino-plan-v1',JSON.stringify({plan,settings}))}catch(e){}}
+function loadSaved(){try{const x=JSON.parse(localStorage.getItem('darsino-plan-v1')||'null');if(x&&x.plan&&x.settings){plan=x.plan;settings=x.settings;$('#studentName').value=settings.name||'';$('#grade').value=settings.grade||'هفتم';$('#hours').value=String(settings.hours||2);$('#startTime').value=String(settings.start||16);$('#examDate').value=settings.exam||'';$('#breakLength').value=String(settings.breakMin||10);$('#subjects').innerHTML='';settings.subjects.forEach(s=>{addSubjectRow(s.name);const r=$('#subjects .subject-row:last-child');r.querySelector('.mastery').value=s.mastery;r.querySelector('.difficulty').value=s.difficulty});renderPlan();if(settings.name)$('#tipTitle').textContent=`${settings.name}، قدم‌های کوچیک هم پیشرفت‌اند`;}}
+ catch(e){}}
+$('#plannerForm').addEventListener('submit',e=>{e.preventDefault();settings=readForm();if(!settings.subjects.length){toast('اسم حداقل یک درس رو وارد کن.');return}if(settings.exam&&new Date(settings.exam+'T23:59:59')<new Date()){toast('تاریخ امتحان گذشته است؛ یک تاریخ آینده انتخاب کن.');return}plan=generatePlan(settings);savePlan();renderPlan();$('#scheduleCard').scrollIntoView({behavior:'smooth',block:'start'});toast('برنامهٔ هفتگی درسینو ساخته شد!');if(settings.name)$('#tipTitle').textContent=`${settings.name}، قدم‌های کوچیک هم پیشرفت‌اند`;});
+$('#regenBtn').addEventListener('click',()=>{if(!settings){toast('اول پرسش‌نامه رو تکمیل کن.');$('#questionnaire').scrollIntoView({behavior:'smooth'});return}plan=generatePlan(settings);savePlan();renderPlan();toast('برنامه دوباره تنظیم شد.')});
+$('#resetBtn').addEventListener('click',()=>{if(!confirm('فرم و برنامهٔ ذخیره‌شده پاک شود؟'))return;$('#plannerForm').reset();$('#subjects').innerHTML='';addSubjectRow('ریاضی');addSubjectRow('علوم');addSubjectRow('فارسی');plan=[];settings=null;localStorage.removeItem('darsino-plan-v1');renderPlan();$('#scheduleSubtitle').textContent='بعد از پاسخ‌دادن به سؤال‌ها، برنامه اینجا نمایش داده می‌شود.';toast('فرم پاک شد.')});
+$('#printBtn').addEventListener('click',()=>{if(!plan.length){toast('اول یک برنامه بساز.');return}window.print()});
+$('#exportBtn').addEventListener('click',()=>{if(!plan.length){toast('اول یک برنامه بساز.');return}const blob=new Blob([JSON.stringify({brand:'درسینو',version:1,settings,plan},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='darsino-backup.json';a.click();URL.revokeObjectURL(a.href);toast('نسخهٔ پشتیبان آماده شد.')});
+loadSaved();
+</script>
+</body>
+</html>
